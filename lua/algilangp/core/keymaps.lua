@@ -5,12 +5,9 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "clear search highlights" })
+keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "clear search highlights" })
 
 keymap.set("n", "x", '"_x')
-
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
