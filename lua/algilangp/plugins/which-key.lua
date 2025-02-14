@@ -17,7 +17,6 @@ return {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>n", group = "Session" },
-			{ "<leader>o", group = "Noice" },
 			{ "<leader>s", group = "Split" },
 		},
 	},
