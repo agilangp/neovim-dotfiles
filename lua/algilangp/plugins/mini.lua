@@ -1,10 +1,10 @@
 return {
 	{
-		"echasnovski/mini.notify",
+		"echasnovski/mini.indentscope",
 		version = false,
 		config = function()
-			local notify = require("mini.notify")
-			notify.setup()
+			local indentscope = require("mini.indentscope")
+			indentscope.setup()
 		end,
 	},
 	{
