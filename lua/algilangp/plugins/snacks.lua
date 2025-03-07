@@ -105,15 +105,70 @@ return {
 				{ section = "startup" },
 			},
 		},
-		-- explorer = { enabled = true },
+		explorer = { enabled = true, replace_netrw = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		-- picker = { enabled = true },
+		lazygit = {},
+		picker = {
+			enabled = true,
+			sources = { explorer = { layout = { preset = "sidebar", layout = { position = "right" } } } },
+		},
 		notifier = { enabled = true },
 		-- quickfile = { enabled = true },
 		scope = { enabled = true },
 		-- scroll = { enabled = true },
 		-- statuscolumn = { enabled = true },
 		words = { enabled = true },
+	},
+	keys = {
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "Explore Files",
+		},
+		{
+			"<leader>ff",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			"<leader>fr",
+			function()
+				Snacks.picker.recent()
+			end,
+			desc = "Find Recent Files",
+		},
+		{
+			"<leader>fb",
+			function()
+				Snacks.picker.buffers()
+			end,
+			desc = "Find Buffers",
+		},
+		{
+			"<leader>fs",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Find in Current Working Directory",
+		},
+		{
+			"<leader>fl",
+			function()
+				Snacks.picker.lines()
+			end,
+			desc = "Find in Line",
+		},
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Open LazyGit",
+		},
 	},
 }
