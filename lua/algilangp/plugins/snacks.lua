@@ -111,7 +111,13 @@ return {
 		lazygit = {},
 		picker = {
 			enabled = true,
-			sources = { explorer = { layout = { preset = "sidebar", layout = { position = "right" } } } },
+			sources = {
+				explorer = {
+					hidden = true,
+					ignored = true,
+					layout = { preset = "sidebar", layout = { position = "right" } },
+				},
+			},
 		},
 		notifier = { enabled = true },
 		-- quickfile = { enabled = true },
