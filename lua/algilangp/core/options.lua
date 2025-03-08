@@ -27,3 +27,5 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.swapfile = false
+
+vim.o.shell = "powershell.exe"

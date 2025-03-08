@@ -118,6 +118,7 @@ return {
 		scope = { enabled = true },
 		-- scroll = { enabled = true },
 		-- statuscolumn = { enabled = true },
+		terminal = {},
 		words = { enabled = true },
 	},
 	keys = {
@@ -169,6 +170,13 @@ return {
 				Snacks.lazygit()
 			end,
 			desc = "Open LazyGit",
+		},
+		{
+			"<leader>t",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "Open Terminal",
 		},
 	},
 }
