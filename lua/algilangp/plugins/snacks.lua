@@ -178,7 +178,7 @@ return {
 			desc = "Open LazyGit",
 		},
 		{
-			"<leader>t",
+			"<leader>r",
 			function()
 				Snacks.terminal.toggle()
 			end,

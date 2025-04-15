@@ -18,6 +18,7 @@ return {
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>n", group = "Session" },
 			{ "<leader>s", group = "Split" },
+			{ "<leader>t", group = "Tab" },
 		},
 	},
 }

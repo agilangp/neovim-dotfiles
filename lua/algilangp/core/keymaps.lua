@@ -19,3 +19,7 @@ keymap.set("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 keymap.set("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
+
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+keymap.set("n", "<leader>tx", "<cmd>bd<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab

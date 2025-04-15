@@ -35,4 +35,12 @@ return {
 			jump2d.setup()
 		end,
 	},
+	{
+		"echasnovski/mini.tabline",
+		version = "*",
+		config = function()
+			local tabline = require("mini.tabline")
+			tabline.setup()
+		end,
+	},
 }
