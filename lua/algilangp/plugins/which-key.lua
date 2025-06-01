@@ -10,6 +10,7 @@ return {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 		spec = {
+			{ "<leader>a", group = "AI action" },
 			{ "<leader>c", group = "Code action" },
 			{ "<leader>d", group = "Diagnostic" },
 			{ "<leader>e", group = "Explorer" },
