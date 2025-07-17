@@ -28,6 +28,6 @@ return {
 		},
 		{ "<leader>dq", "<cmd>Trouble quickfix toggle<CR>", desc = "Open trouble quickfix list" },
 		{ "<leader>dl", "<cmd>Trouble loclist toggle<CR>", desc = "Open trouble location list" },
-		--    { "<leader>xt", "<cmd>Trouble todo toggle<CR>", desc = "Open todos in trouble" },
+		{ "<leader>dt", "<cmd>Trouble todo toggle<CR>", desc = "Open todos in trouble" },
 	},
 }

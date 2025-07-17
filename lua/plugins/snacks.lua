@@ -105,7 +105,7 @@ return {
 				{ section = "startup" },
 			},
 		},
-		explorer = { enabled = true, replace_netrw = true },
+		explorer = { replace_netrw = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		lazygit = {},
