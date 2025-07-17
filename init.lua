@@ -1,2 +1,2 @@
-require("algilangp.core")
-require("algilangp.lazy")
+require("core")
+require("config.lazy")
