@@ -21,8 +21,8 @@ keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 
 -- buffer management
-keymap.set("n", "L", "<cmd>bn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "H", "<cmd>bp<CR>", { desc = "Go to previous tab" })
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-keymap.set("n", "<leader>tx", "<cmd>bd<CR>", { desc = "Close current tab" })
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+keymap.set("n", "L", "<cmd>bn<CR>", { desc = "Go to next buffer" })
+keymap.set("n", "H", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
+keymap.set("n", "<leader>bo", "<cmd>tabnew<CR>", { desc = "Open new buffer" })
+keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>bf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new buffer" })

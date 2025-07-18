@@ -11,6 +11,7 @@ return {
 		-- refer to the configuration section below
 		spec = {
 			{ "<leader>a", group = "AI action" },
+			{ "<leader>b", group = "Buffer" },
 			{ "<leader>c", group = "Code action" },
 			{ "<leader>d", group = "Diagnostic" },
 			{ "<leader>e", group = "Explorer" },
@@ -19,7 +20,6 @@ return {
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>n", group = "Session" },
 			{ "<leader>s", group = "Split" },
-			{ "<leader>t", group = "Tab" },
 		},
 	},
 }
