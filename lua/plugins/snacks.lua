@@ -105,20 +105,11 @@ return {
 				{ section = "startup" },
 			},
 		},
-		explorer = { replace_netrw = true },
+		-- explorer = { replace_netrw = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		lazygit = {},
-		picker = {
-			enabled = true,
-			sources = {
-				explorer = {
-					hidden = true,
-					ignored = true,
-					layout = { preset = "sidebar", layout = { position = "right" } },
-				},
-			},
-		},
+		picker = { enabled = true },
 		notifier = { enabled = true },
 		-- quickfile = { enabled = true },
 		scope = { enabled = true },
@@ -128,13 +119,13 @@ return {
 		words = { enabled = true },
 	},
 	keys = {
-		{
-			"<leader>e",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "Explore Files",
-		},
+		-- {
+		-- 	"<leader>e",
+		-- 	function()
+		-- 		Snacks.explorer()
+		-- 	end,
+		-- 	desc = "Explore Files",
+		-- },
 		{
 			"<leader>ff",
 			function()
@@ -178,7 +169,7 @@ return {
 			desc = "Open LazyGit",
 		},
 		{
-			"<leader>r",
+			"<leader>t",
 			function()
 				Snacks.terminal.toggle()
 			end,

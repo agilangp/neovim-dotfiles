@@ -1,5 +1,3 @@
-vim.cmd("let g:netrw_liststyle = 3")
-
 local opt = vim.opt
 
 opt.number = true
@@ -28,4 +26,11 @@ opt.splitbelow = true
 
 opt.swapfile = false
 
+opt.syntax = "on"
+
 vim.o.shell = "powershell.exe"
+
+vim.g.netrw_liststyle = 3
+vim.g.netrw_browse_split = 4
+-- vim.g.netrw_altv = 1
+vim.g.netrw_banner = 0
