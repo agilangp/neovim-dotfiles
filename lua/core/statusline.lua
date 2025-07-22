@@ -12,7 +12,6 @@ M.separators = {
 	blank = { "", "" },
 }
 
--- only using default highlight groups now
 M.colors = {
 	active = "%#StatusLine#",
 	inactive = "%#StatusLineNC#",
@@ -63,10 +62,26 @@ M.modes = setmetatable({
 
 M.get_current_mode = function(self)
 	local current_mode = api.nvim_get_mode().mode
+	local mode_label
+
 	if self:is_truncated(self.trunc_width.mode) then
-		return string.format(" %s ", self.modes[current_mode][2]):upper()
+		mode_label = string.format(" %s ", self.modes[current_mode][2]):upper()
+	else
+		mode_label = string.format(" %s ", self.modes[current_mode][1]):upper()
 	end
-	return string.format(" %s ", self.modes[current_mode][1]):upper()
+
+	local mode_highlight_map = {
+		n = "%#StatuslineNormal#",
+		i = "%#StatuslineInsert#",
+		v = "%#StatuslineVisual#",
+		V = "%#StatuslineVisual#",
+		[""] = "%#StatuslineVisual#",
+		R = "%#StatuslineReplace#",
+		c = "%#StatuslineCommand#",
+	}
+
+	local hl = mode_highlight_map[current_mode] or "%#StatusLine#"
+	return hl .. mode_label .. "%#StatusLine#"
 end
 
 M.get_git_status = function(self)
@@ -111,7 +126,7 @@ end
 M.set_active = function(self)
 	local c = self.colors
 
-	local mode = c.active .. self:get_current_mode()
+	local mode = self:get_current_mode()
 	local git = c.active .. self:get_git_status()
 	local filename = c.active .. self:get_filename()
 	local filetype = c.active .. self:get_filetype()
@@ -151,7 +166,30 @@ Statusline = setmetatable(M, {
 	end,
 })
 
--- set statusline
+-- Define custom highlight groups for each mode
+vim.cmd([[
+  highlight StatuslineNormal guibg=#98c379 guifg=#000000 gui=bold
+  highlight StatuslineInsert guibg=#56b6c2 guifg=#000000 gui=bold
+  highlight StatuslineVisual guibg=#e5c07b guifg=#000000 gui=bold
+  highlight StatuslineReplace guibg=#e06c75 guifg=#000000 gui=bold
+  highlight StatuslineCommand guibg=#d3d3d3 guifg=#000000 gui=bold
+]])
+
+-- Ensure highlights are reapplied on colorscheme changes
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.cmd([[
+      highlight StatuslineNormal guibg=#98c379 guifg=#000000 gui=bold
+      highlight StatuslineInsert guibg=#56b6c2 guifg=#000000 gui=bold
+      highlight StatuslineVisual guibg=#e5c07b guifg=#000000 gui=bold
+      highlight StatuslineReplace guibg=#e06c75 guifg=#000000 gui=bold
+      highlight StatuslineCommand guibg=#d3d3d3 guifg=#000000 gui=bold
+    ]])
+	end,
+})
+
+-- Set statusline autocommands
 api.nvim_exec(
 	[[
   augroup Statusline
