@@ -168,10 +168,10 @@ Statusline = setmetatable(M, {
 
 -- Define custom highlight groups for each mode
 vim.cmd([[
-  highlight StatuslineNormal guibg=#98c379 guifg=#000000 gui=bold
-  highlight StatuslineInsert guibg=#56b6c2 guifg=#000000 gui=bold
-  highlight StatuslineVisual guibg=#e5c07b guifg=#000000 gui=bold
-  highlight StatuslineReplace guibg=#e06c75 guifg=#000000 gui=bold
+  highlight StatuslineNormal guibg=#d3d3d3 guifg=#000000 gui=bold
+  highlight StatuslineInsert guibg=#d3d3d3 guifg=#000000 gui=bold
+  highlight StatuslineVisual guibg=#d3d3d3 guifg=#000000 gui=bold
+  highlight StatuslineReplace guibg=#d3d3d3 guifg=#000000 gui=bold
   highlight StatuslineCommand guibg=#d3d3d3 guifg=#000000 gui=bold
 ]])
 
@@ -180,10 +180,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
 		vim.cmd([[
-      highlight StatuslineNormal guibg=#98c379 guifg=#000000 gui=bold
-      highlight StatuslineInsert guibg=#56b6c2 guifg=#000000 gui=bold
-      highlight StatuslineVisual guibg=#e5c07b guifg=#000000 gui=bold
-      highlight StatuslineReplace guibg=#e06c75 guifg=#000000 gui=bold
+      highlight StatuslineNormal guibg=#d3d3d3 guifg=#000000 gui=bold
+      highlight StatuslineInsert guibg=#d3d3d3 guifg=#000000 gui=bold
+      highlight StatuslineVisual guibg=#d3d3d3 guifg=#000000 gui=bold
+      highlight StatuslineReplace guibg=#d3d3d3 guifg=#000000 gui=bold
       highlight StatuslineCommand guibg=#d3d3d3 guifg=#000000 gui=bold
     ]])
 	end,
