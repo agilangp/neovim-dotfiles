@@ -32,4 +32,4 @@ keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close current buffer" })
 keymap.set("n", "<leader>bn", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new buffer" })
 
 -- netrw
-keymap.set("n", "<leader>e", "<cmd>25Lexplore!<CR>", { desc = "Toggle Explore" })
+keymap.set("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Toggle Explore" })
