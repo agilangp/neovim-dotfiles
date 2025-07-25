@@ -1,4 +1,6 @@
 return {
     "mfussenegger/nvim-lint",
-    event = {'BufWritePost'}
+    opts = {
+        event = {'BufWritePost'}
+    }
 }
