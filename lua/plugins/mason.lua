@@ -12,6 +12,7 @@ return {
                     package_uninstalled = "✗"
                 }
             }
-        } },
+        }},
+        "neovim/nvim-lspconfig",
     },
 }
