@@ -29,7 +29,8 @@ opt.swapfile = false
 opt.syntax = "on"
 
 vim.o.shell = "powershell.exe"
+vim.o.winborder = "rounded"
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
-vim.g.netrw_banner = 0
+
