@@ -34,3 +34,6 @@ keymap.set("n", "<leader>bn", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- netrw
 keymap.set("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Toggle Explore" })
+
+-- lsp
+keymap.set("n", "<leader>lf", vim.lsp.buf.format )
