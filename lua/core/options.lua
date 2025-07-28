@@ -7,6 +7,10 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
+opt.list = true
+opt.listchars = {
+    space = '.',
+}
 
 opt.wrap = true
 
@@ -33,4 +37,3 @@ vim.o.winborder = "rounded"
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
-
