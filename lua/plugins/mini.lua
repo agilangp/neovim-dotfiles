@@ -20,11 +20,4 @@ return {
             require('mini.surround').setup()
         end
     },
-    {
-        'echasnovski/mini.notify',
-        version = '*',
-        config = function()
-            require('mini.notify').setup()
-        end
-    },
 }
