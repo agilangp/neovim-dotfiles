@@ -32,6 +32,7 @@ opt.syntax = "on"
 
 vim.o.shell = "powershell.exe"
 vim.o.winborder = "rounded"
+vim.o.completeopt = "menuone,noinsert,noselect,preview"
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
