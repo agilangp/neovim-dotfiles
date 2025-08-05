@@ -1,10 +1,15 @@
 return {
-    "mason-org/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "emmet_ls", "intelephense"},
+        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "emmet_ls", "intelephense" },
     },
     dependencies = {
-        { "mason-org/mason.nvim", opts = {
+        "neovim/nvim-lspconfig",
+        "mason-org/mason.nvim",
+        "mason-org/mason-lspconfig.nvim",
+    },
+    config = function()
+        require("mason").setup({
             ui = {
                 icons = {
                     package_installed = "✓",
@@ -12,7 +17,18 @@ return {
                     package_uninstalled = "✗"
                 }
             }
-        }},
-        "neovim/nvim-lspconfig",
-    },
+        })
+        require("mason-lspconfig").setup()
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "lua_ls",
+                "ts_ls",
+                "tailwindcss",
+                "emmet_ls",
+                "intelephense",
+            },
+            automatic_installation = true,
+            run_on_start = true,
+        })
+    end,
 }
