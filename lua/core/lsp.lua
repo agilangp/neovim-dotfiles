@@ -24,3 +24,8 @@ vim.lsp.config('lua_ls', {
     },
 })
 
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  },
+})

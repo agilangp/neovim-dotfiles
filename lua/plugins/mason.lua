@@ -4,7 +4,6 @@ return {
         ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "emmet_ls", "intelephense" },
     },
     dependencies = {
-        "neovim/nvim-lspconfig",
         "mason-org/mason.nvim",
         "mason-org/mason-lspconfig.nvim",
     },

@@ -27,6 +27,6 @@
 
 return {
   cmd = { 'intelephense', '--stdio' },
-  filetypes = { 'php' },
+  filetypes = { 'blade','php' },
   root_markers = { '.git', 'composer.json' },
 }
