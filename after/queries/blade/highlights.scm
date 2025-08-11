@@ -1,0 +1,10 @@
+(directive) @function
+(directive_start) @function
+(directive_end) @function
+(comment) @comment
+(keyword) @function
+(text) @text
+(parameter) @include
+(php_only) @include
+(curly_brackets_open) @function
+(curly_brackets_close) @function
