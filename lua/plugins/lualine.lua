@@ -49,7 +49,7 @@ return {
                         symbols = { error = "", warn = "", info = "", hint = "" },
                         colored = true, -- Displays diagnostics status in color if set to true.
                         update_in_insert = false, -- Update diagnostics in insert mode.
-                        always_visible = true, -- Show diagnostics even if there are none.
+                        always_visible = false, -- Show diagnostics even if there are none.
                     },
                 },
                 lualine_c = { { "filename", path = 3 } },
