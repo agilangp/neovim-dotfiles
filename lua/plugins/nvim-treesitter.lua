@@ -27,7 +27,8 @@ return {
                 "vimdoc",
                 "c",
                 "php",
-                "blade"
+                "blade",
+                "fish"
             }, -- Add 'blade' here
             ignore_install = {},
             modules = {},
