@@ -28,7 +28,8 @@ return {
                 "c",
                 "php",
                 "blade",
-                "fish"
+                "fish",
+                "tmux"
             }, -- Add 'blade' here
             ignore_install = {},
             modules = {},
