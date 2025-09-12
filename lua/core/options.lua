@@ -11,6 +11,7 @@ opt.list = true
 opt.listchars = {
     space = '.',
 }
+opt.wrap = false
 
 opt.ignorecase = true
 opt.smartcase = true
