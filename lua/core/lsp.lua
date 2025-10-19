@@ -7,7 +7,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
--- vim.cmd[[set completeopt+=menuone,noselect,popup]]
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 vim.lsp.config('lua_ls', {
