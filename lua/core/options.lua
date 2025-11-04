@@ -33,7 +33,6 @@ opt.swapfile = false
 opt.syntax = "on"
 
 opt.shell = "powershell.exe"
-opt.winborder = "rounded"
 opt.completeopt = {"menu", "menuone", "noselect"}
 
 vim.g.netrw_liststyle = 3

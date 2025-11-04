@@ -1,33 +1,50 @@
 return {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = {
-        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "emmet_ls", "intelephense" },
-    },
-    dependencies = {
-        "mason-org/mason.nvim",
-        "mason-org/mason-lspconfig.nvim",
-    },
-    config = function()
-        require("mason").setup({
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗"
-                }
-            }
-        })
-        require("mason-lspconfig").setup()
-        require("mason-tool-installer").setup({
+    {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+            -- list of servers for mason to install
             ensure_installed = {
-                "lua_ls",
                 "ts_ls",
+                "html",
+                "cssls",
                 "tailwindcss",
+                "lua_ls",
                 "emmet_ls",
+                "prismals",
+                "fist_lsp",
                 "intelephense",
+                "jsonnls",
+            },
+        },
+        dependencies = {
+            {
+                "williamboman/mason.nvim",
+                opts = {
+                    ui = {
+                        icons = {
+                            package_installed = "✓",
+                            package_pending = "➜",
+                            package_uninstalled = "✗",
+                        },
+                    },
+                },
+            },
+            "neovim/nvim-lspconfig",
+        },
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        opts = {
+            ensure_installed = {
+                "prettierd", -- prettier formatter
+                "stylua", -- lua formatter
+                "eslint_d",
             },
             automatic_installation = true,
             run_on_start = true,
-        })
-    end,
+        },
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
+    },
 }
