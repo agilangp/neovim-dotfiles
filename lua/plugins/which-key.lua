@@ -15,6 +15,6 @@ return {
     keys = {
         { "<leader>fb", "<cmd>FzfLua buffers<cr>",   desc = "Find Buffers" },
         { "<leader>ff", "<cmd>FzfLua files<cr>",     desc = "Find Files" },
-        { "<leader>fs", "<cmd>FzfLua live_grep<cr>", desc = "Find Strings" }
+        { "<leader>fs", "<cmd>FzfLua live_grep<cr>", desc = "Find Strings on Working Directory" },
     }
 }
