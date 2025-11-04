@@ -31,9 +31,9 @@ opt.splitbelow = true
 opt.swapfile = false
 
 opt.syntax = "on"
+opt.completeopt = {"noselect"}
 
 opt.shell = "powershell.exe"
-opt.completeopt = {"menu", "menuone", "noselect"}
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
