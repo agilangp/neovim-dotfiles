@@ -32,7 +32,6 @@ opt.splitbelow = true
 opt.swapfile = false
 
 opt.syntax = "on"
-opt.completeopt = {"noselect"}
 
 opt.shell = "powershell.exe"
 

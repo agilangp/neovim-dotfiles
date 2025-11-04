@@ -14,6 +14,7 @@ return {
                 "fist_lsp",
                 "intelephense",
                 "jsonnls",
+                "tombi"
             },
         },
         dependencies = {
@@ -29,7 +30,14 @@ return {
                     },
                 },
             },
-            "neovim/nvim-lspconfig",
+            {
+                "neovim/nvim-lspconfig",
+                config = function()
+                    vim.lsp.config("*", {
+                        capabilities = require("blink.cmp").get_lsp_capabilities(),
+                    })
+                end,
+            },
         },
     },
     {
