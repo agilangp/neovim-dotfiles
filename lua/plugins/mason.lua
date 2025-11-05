@@ -11,9 +11,9 @@ return {
                 "lua_ls",
                 "emmet_ls",
                 "prismals",
-                "fist_lsp",
+                "fish_lsp",
                 "intelephense",
-                "jsonnls",
+                "jsonls",
                 "tombi"
             },
         },
