@@ -29,8 +29,9 @@ return {
                 "php",
                 "blade",
                 "fish",
-                "tmux"
-            }, -- Add 'blade' here
+                "tmux",
+                "http"
+            },
             ignore_install = {},
             modules = {},
             sync_install = false,

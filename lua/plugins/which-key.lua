@@ -9,6 +9,7 @@ return {
             { "<leader>f", group = "Find" },
             { "<leader>g", group = "Git" },
             { "<leader>l", group = "LSP" },
+            { "<leader>R", group = "Rest HTTP Client" },
             { "<leader>s", group = "Split" },
         }
     },
