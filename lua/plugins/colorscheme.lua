@@ -20,18 +20,28 @@
 --     end
 -- }
 
--- return {
---     "RRethy/base16-nvim",
---     config = function()
---         vim.cmd('colorscheme base16-onedark-dark')
---     end
--- }
-
-return {
-    "Mofiqul/adwaita.nvim",
-    lazy = false,
-    priority = 1000,
+return { "RRethy/base16-nvim",
     config = function()
-        vim.cmd('colorscheme adwaita')
+        vim.cmd('colorscheme base16-onedark-dark')
     end
 }
+
+-- return {
+--     "Mofiqul/adwaita.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         vim.g.adwaita_darker = true -- for darker version
+--         vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+--         vim.cmd([[colorscheme adwaita]])
+--     end,
+-- }
+
+-- return {
+--     "webhooked/kanso.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         vim.cmd("colorscheme kanso")
+--     end,
+-- }
