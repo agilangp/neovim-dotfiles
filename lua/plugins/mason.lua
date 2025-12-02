@@ -14,7 +14,8 @@ return {
                 "fish_lsp",
                 "intelephense",
                 "jsonls",
-                "tombi"
+                "tombi",
+                "markdown_oxide",
             },
         },
         dependencies = {
