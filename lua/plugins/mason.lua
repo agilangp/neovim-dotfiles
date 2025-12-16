@@ -15,7 +15,7 @@ return {
                 "intelephense",
                 "jsonls",
                 "tombi",
-                "markdown_oxide",
+                "marksman",
             },
         },
         dependencies = {
