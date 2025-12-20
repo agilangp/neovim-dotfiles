@@ -20,11 +20,11 @@
 --     end
 -- }
 
-return { "RRethy/base16-nvim",
-    config = function()
-        vim.cmd('colorscheme base16-onedark-dark')
-    end
-}
+-- return { "RRethy/base16-nvim",
+--     config = function()
+--         vim.cmd('colorscheme base16-onedark-dark')
+--     end
+-- }
 
 -- return {
 --     "Mofiqul/adwaita.nvim",
@@ -45,3 +45,21 @@ return { "RRethy/base16-nvim",
 --         vim.cmd("colorscheme kanso")
 --     end,
 -- }
+
+-- return {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         vim.cmd("colorscheme tokyonight-night")
+--     end,
+-- }
+
+return {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+    config = function()
+        vim.cmd("colorscheme onedark_dark")
+    end,
+}
