@@ -22,5 +22,10 @@ return {
                 require("conform").format({ async = false })
             end,
         })
+
+        -- Add vim keymap to format manually
+        vim.keymap.set("n", "<leader>lf", function()
+            require("conform").format({ async = false, fallback = false })
+        end, { desc = "Format current buffer" })
     end,
 }

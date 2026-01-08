@@ -37,5 +37,5 @@ keymap.set("n", "<leader>bn", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- lsp
 keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { desc = "Show code actions" })
-keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
+-- keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
 keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename under cursor" })
