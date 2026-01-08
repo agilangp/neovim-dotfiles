@@ -2,14 +2,14 @@ return {
     "mfussenegger/nvim-lint",
     config = function()
         require("lint").linters_by_ft = {
-            css = { "biome" },
-            html = { "biome" },
-            javascript = { "biome" },
-            javascriptreact = { "biome" },
-            json = { "biome" },
-            jsonc = { "biome" },
-            typescript = { "biome" },
-            typescriptreact = { "biome" },
+            css = { "biomejs" },
+            html = { "biomejs" },
+            javascript = { "biomejs" },
+            javascriptreact = { "biomejs" },
+            json = { "biomejs" },
+            jsonc = { "biomejs" },
+            typescript = { "biomejs" },
+            typescriptreact = { "biomejs" },
         }
 
         -- Automatically lint on save
