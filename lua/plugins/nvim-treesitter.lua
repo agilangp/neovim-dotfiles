@@ -11,7 +11,6 @@ return {
             "prisma",
             "lua",
             "fish",
-            "json",
             "html",
             "css",
             "bash",
@@ -24,7 +23,6 @@ return {
             "tmux",
             "vim",
             "json",
-            "jsonc",
         })
 
         vim.api.nvim_create_autocmd("FileType", {

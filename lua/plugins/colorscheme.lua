@@ -20,11 +20,12 @@
 --     end
 -- }
 
--- return { "RRethy/base16-nvim",
---     config = function()
---         vim.cmd('colorscheme base16-onedark-dark')
---     end
--- }
+return {
+    "RRethy/base16-nvim",
+    config = function()
+        vim.cmd("colorscheme base16-material-darker")
+    end,
+}
 
 -- return {
 --     "Mofiqul/adwaita.nvim",
@@ -56,10 +57,10 @@
 --     end,
 -- }
 
-return {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-    config = function()
-        vim.cmd("colorscheme onedark_dark")
-    end,
-}
+-- return {
+--     "olimorris/onedarkpro.nvim",
+--     priority = 1000, -- Ensure it loads first
+--     config = function()
+--         vim.cmd("colorscheme onedark_dark")
+--     end,
+-- }
