@@ -1,37 +1,30 @@
 return {
     {
-        'echasnovski/mini.ai',
-        version = '*',
+        "echasnovski/mini.ai",
+        version = "*",
         config = function()
-            require('mini.ai').setup()
-        end
+            require("mini.ai").setup()
+        end,
     },
     {
-        'echasnovski/mini.pairs',
-        version = '*',
+        "echasnovski/mini.pairs",
+        version = "*",
         config = function()
-            require('mini.pairs').setup()
-        end
+            require("mini.pairs").setup()
+        end,
     },
     {
-        'echasnovski/mini.surround',
-        version = '*',
+        "echasnovski/mini.surround",
+        version = "*",
         config = function()
-            require('mini.surround').setup()
-        end
+            require("mini.surround").setup()
+        end,
     },
     {
-        'echasnovski/mini.statusline',
-        version = '*',
+        "echasnovski/mini.notify",
+        version = "*",
         config = function()
-            require('mini.statusline').setup()
-        end
-    },
-    {
-        'echasnovski/mini.notify',
-        version = '*',
-        config = function()
-            require('mini.notify').setup()
-        end
+            require("mini.notify").setup()
+        end,
     },
 }
