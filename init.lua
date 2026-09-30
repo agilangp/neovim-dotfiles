@@ -19,8 +19,15 @@ vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
 vim.keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open Oil" })
-vim.keymap.set("n", "<leader>f", ":FzfLua files<CR>", { desc = "Open File Picker" })
 vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { desc = "Open Buffer Picker" })
+vim.keymap.set("n", "<leader>f", ":FzfLua files<CR>", { desc = "Open File Picker" })
+vim.keymap.set("n", "<leader>/", ":FzfLua live_grep<CR>", { desc = "Open Live Grep" })
+
+vim.diagnostic.config({
+	virtual_text = true, -- Enable inline error/warning messages
+	signs = true, -- Show gutter signs
+	underline = true, -- Underline problematic text
+})
 
 vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -36,6 +43,8 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 
 require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
@@ -92,6 +101,7 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "<filetype>" },
 	callback = function()
@@ -111,4 +121,5 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 		require("nvim-autopairs").setup({})
 	end,
 })
+
 vim.cmd("colorscheme nord")
