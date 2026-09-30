@@ -16,6 +16,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.winborder = "rounded"
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
