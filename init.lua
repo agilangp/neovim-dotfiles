@@ -42,6 +42,7 @@ vim.pack.add({
 	{ src = "https://github.com/shaunsingh/nord.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/refractalize/oil-git-status.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
