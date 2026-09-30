@@ -56,6 +56,7 @@ vim.pack.add({
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 	{ src = "https://github.com/folke/which-key.nvim" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
 require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
@@ -109,6 +110,12 @@ require("oil").setup({
 })
 require("oil-git-status").setup()
 require("ibl").setup()
+require("bufferline").setup({
+	options = {
+		diagnostics = "nvim_lsp",
+		always_show_bufferline = false,
+	},
+})
 require("which-key").setup({
 	preset = "helix",
 })
