@@ -22,6 +22,7 @@ vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
 vim.keymap.set("n", "<leader>ch", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil" })
 vim.keymap.set("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "Open Buffer Picker" })
+vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Open Diagnostics for Current File" })
 vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "Open File Picker" })
 vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<CR>", { desc = "Open Live Grep" })
 vim.keymap.set("n", "<Leader>g", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
@@ -53,6 +54,7 @@ vim.pack.add({
 	{ src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
+	{ src = "https://github.com/folke/which-key.nvim" },
 })
 
 require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
@@ -106,6 +108,9 @@ require("oil").setup({
 })
 require("oil-git-status").setup()
 require("ibl").setup()
+require("which-key").setup({
+	preset = "helix",
+})
 
 vim.lsp.config("lua_ls", {
 	settings = {
