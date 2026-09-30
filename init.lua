@@ -17,15 +17,17 @@ vim.opt.splitbelow = true
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
-vim.keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "clear search highlights" })
+vim.keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>f", ":FzfLua files<CR>", { desc = "Open File Picker" })
+vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { desc = "Open Buffer Picker" })
 
 vim.pack.add({
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/whoIsSethDaniel/mason-tool-installer.nvim" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
@@ -33,8 +35,10 @@ vim.pack.add({
 	{ src = "https://github.com/shaunsingh/nord.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
 })
 
+require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -87,6 +91,12 @@ vim.lsp.config("lua_ls", {
 			},
 		},
 	},
+})
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "<filetype>" },
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
