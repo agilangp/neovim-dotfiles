@@ -11,26 +11,30 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode with kj" })
-vim.keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
-vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open Oil" })
-vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { desc = "Open Buffer Picker" })
-vim.keymap.set("n", "<leader>f", ":FzfLua files<CR>", { desc = "Open File Picker" })
-vim.keymap.set("n", "<leader>/", ":FzfLua live_grep<CR>", { desc = "Open Live Grep" })
+vim.keymap.set("n", "<leader>ch", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "Open Buffer Picker" })
+vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "Open File Picker" })
+vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<CR>", { desc = "Open Live Grep" })
+vim.keymap.set("n", "<Leader>g", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 vim.diagnostic.config({
-	virtual_text = true, -- Enable inline error/warning messages
+	virtual_lines = true,
 	signs = true, -- Show gutter signs
 	underline = true, -- Underline problematic text
 })
 
 vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/mfussenegger/nvim-lint" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -46,9 +50,16 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 })
 
 require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
+require("lint").linters_by_ft = {
+	javascript = { "biomejs" },
+	typescript = { "biomejs" },
+}
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -88,7 +99,13 @@ require("conform").setup({
 		typescript = { "biome" },
 	},
 })
-require("oil").setup()
+require("oil").setup({
+	win_options = {
+		signcolumn = "yes:2",
+	},
+})
+require("oil-git-status").setup()
+require("ibl").setup()
 
 vim.lsp.config("lua_ls", {
 	settings = {
