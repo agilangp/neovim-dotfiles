@@ -125,6 +125,13 @@ require("bufferline").setup({
 require("which-key").setup({
 	preset = "helix",
 })
+require("flash").setup({
+	modes = {
+		char = {
+			enabled = false,
+		},
+	},
+})
 
 vim.lsp.config("lua_ls", {
 	settings = {
