@@ -57,7 +57,9 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
+	{ src = "https://github.com/nvim-mini/mini.surround", version = "stable" },
+	{ src = "https://github.com/nvim-mini/mini.ai", version = "stable" },
+	{ src = "https://github.com/nvim-mini/mini.statusline", version = "stable" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 	{ src = "https://github.com/folke/which-key.nvim" },
@@ -132,6 +134,9 @@ require("flash").setup({
 		},
 	},
 })
+require("mini.ai").setup()
+require("mini.surround").setup()
+require("mini.statusline").setup()
 
 vim.lsp.config("lua_ls", {
 	settings = {
