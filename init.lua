@@ -27,6 +27,11 @@ vim.keymap.set("n", "<leader>d", "<cmd>FzfLua diagnostics_document<CR>", { desc 
 vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "Open File Picker" })
 vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<CR>", { desc = "Open Live Grep" })
 vim.keymap.set("n", "<Leader>g", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
+vim.keymap.set({ "n", "x", "o" }, "s", "<cmd>lua require('flash').jump()<cr>", { desc = "Flash" })
+vim.keymap.set({ "n", "x", "o" }, "S", "<cmd>lua require('flash').treesitter()<cr>", { desc = "Flash Treesitter" })
+vim.keymap.set("o", "r", "<cmd>lua require('flash').remote().<cr>", { desc = "Remote Flash" })
+vim.keymap.set({ "o", "x" }, "R", "<cmd>lua require('flash').treesitter_search()<cr>", { desc = "Treesitter Search" })
+vim.keymap.set("c", "<c-s>", "<cmd>lua require('flash').toggle()<cr>", { desc = "Toggle Flash Search" })
 
 vim.diagnostic.config({
 	virtual_lines = true,
@@ -57,6 +62,7 @@ vim.pack.add({
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 	{ src = "https://github.com/folke/which-key.nvim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	{ src = "https://github.com/folke/flash.nvim" },
 })
 
 require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" })
