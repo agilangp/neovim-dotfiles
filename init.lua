@@ -71,6 +71,8 @@ require("nvim-treesitter").install({ "lua", "javascript", "typescript", "fish" }
 require("lint").linters_by_ft = {
 	javascript = { "biomejs" },
 	typescript = { "biomejs" },
+	javascriptreact = { "biomejs" },
+	typescriptreact = { "biomejs" },
 }
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -109,6 +111,8 @@ require("conform").setup({
 		lua = { "stylua" },
 		javascript = { "biome" },
 		typescript = { "biome" },
+		javascriptreact = { "biome" },
+		typescriptreact = { "biome" },
 	},
 })
 require("oil").setup({
